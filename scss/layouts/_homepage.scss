@@ -1,0 +1,227 @@
+/*############################## HOME PAGE ###################################*/
+
+/*//
+//HEADER
+//*/
+
+.header {
+  &__title {
+    font-family: "Shrikhand", sans-serif;
+    font-size: 37px;
+    width: fit-content;
+    margin: 17px auto 10px;
+  }
+
+  &__location {
+    background: grey;
+    height: 75px;
+    text-align: center;
+    font: normal 400 19px $font-headings;
+    padding-top: 27px;
+  }
+}
+
+.fa-location-dot {
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.reservation {
+  background: darkgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 280px;
+  padding: 29px 0 53px 0;
+
+  &__title {
+    font: 700 23px $font-text;
+    text-align: center;
+  }
+
+  &__text {
+    margin: 0 0 22px 0;
+    font: 500 16px $font-text;
+    text-align: center;
+  }
+
+  &__btn {
+    padding: 12px 29px;
+    border-radius: 30px;
+  }
+}
+
+/*//
+//NAV
+//*/
+
+.nav {
+  height: 365px;
+  width: 90%;
+  margin: 21px auto 0;
+
+  &__title {
+    font: 500 23px $font-text
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 267px;
+    margin: 20px 0 0 0;
+    padding: 0 0 0 16px;
+  }
+}
+
+.list-item {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  height: 67px;
+  width: 313px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 20px;
+
+
+  &:hover {
+    background: rgba(147, 86, 220, 0.15);
+    color: #9356DC;
+  }
+
+  &::before {
+    position: absolute;
+    content: "1";
+    height: 23px;
+    width: 23px;
+    top: 19px;
+    left: -12px;
+    border-radius: 100%;
+    background: #9356DC;
+    color: $color-light;
+  }
+
+
+  &__logo {
+    padding: 20px 0 0 0;
+    height: 20px;
+    width: 60px;
+    font-size: 19px;
+  }
+
+  &__name {
+    font: 700 16px Shirkhand, sans-serif;
+    height: 16px;
+    padding: 23px 0 0 0;
+  }
+}
+
+/*//
+//RESTAURANTS
+//*/
+
+.restaurants {
+  background: rgba(128, 128, 128, 0.24);
+  height: 1180px;
+
+  &__title {
+    font: 500 23px $font-text;
+    padding: 39px 0px 19px 26px;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    height: 1031px;
+  }
+}
+
+.card {
+  position: relative;
+  background: $color-light;
+  height: 230px;
+  width: 323px;
+  margin: 0 auto;
+  border-radius: 20px;
+  text-decoration: none;
+  color: $color-dark;
+
+  &__img {
+    background: #9356DC;
+    height: 70%;
+    border-radius: 20px 20px 0 0;
+  }
+
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30%;
+    width: 89%;
+    margin: 0 auto;
+
+
+    &--name {
+      font: 400 19px $font-text;
+      line-height: 1.1;
+    }
+
+    &--location {
+      font: 400 16px $font-text;
+    }
+
+    &--heart {
+      font-size: 29px;
+      width: 13%;
+    }
+  }
+
+  .new::after {
+    position: absolute;
+    content: "Nouveau";
+    height: 34px;
+    width: 76px;
+    top: 9px;
+    right: 10px;
+    background: #99E2D0;
+    text-align: center;
+    padding-top: 5px;
+  }
+}
+
+/*//
+//FOOTER
+//*/
+
+.footer {
+  background: rgba(128, 128, 128, 0.75);
+  height: 175px;
+
+  &__title {
+    padding: 23px 0 0 25px;
+    font: 400 29px $font-headings;
+    color: white;
+  }
+}
+
+.footer-list {
+  padding: 8px 0px 0px 28px;
+  font-family: $font-text;
+
+  &__item {
+    list-style: none;
+  }
+}
+
+.footer-link {
+  text-decoration: none;
+  color: $color-light;
+}
+
+.footer-icon {
+  width: 21px;
+}
