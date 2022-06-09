@@ -1,0 +1,19 @@
+@keyframes heart {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;}
+}
+
+@keyframes button {
+  from {
+    transform: scale(1);
+    background: linear-gradient(150deg, rgba(245, 118, 219, 1) 0%, rgba(160, 90, 220, 1) 100%);
+  }
+
+  to {
+    transform: scale(1.05);
+    background: linear-gradient(360deg, rgba(245, 118, 219, 1) 0%, rgba(160, 90, 220, 1) 100%);
+  }
+}

@@ -1,23 +1,28 @@
 /*############################## HOME PAGE ###################################*/
-
 /*//
 //HEADER
 //*/
 
 .header {
   &__title {
-    font-family: "Shrikhand", sans-serif;
+    position: relative;
+    font-family: $font-headings;
     font-size: 37px;
-    width: fit-content;
-    margin: 17px auto 10px;
+    height: 83px;
+    width: 100%;
+    padding-top: 13px;
+    text-align: center;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.10);
   }
 
+
   &__location {
-    background: grey;
+    background: #f3f3f3;
     height: 75px;
     text-align: center;
-    font: normal 400 19px $font-headings;
+    font: normal 600 19px $font-text;
     padding-top: 27px;
+    color: #808080;
   }
 }
 
@@ -27,7 +32,7 @@
 }
 
 .reservation {
-  background: darkgrey;
+  background: #fafafa;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,11 +49,21 @@
     margin: 0 0 22px 0;
     font: 500 16px $font-text;
     text-align: center;
+    color: #8b8b8b;
   }
 
   &__btn {
-    padding: 12px 29px;
+    padding: 18px 29px;
     border-radius: 30px;
+    border: none;
+    background: linear-gradient(150deg, rgba(245, 118, 219, 1) 0%, rgba(160, 90, 220, 1) 100%);
+    font: 600 15px $font-text;
+    color: $color-light;
+
+    &:hover{
+      cursor: pointer;
+      animation: button 1s ease forwards;
+    }
   }
 }
 
@@ -62,7 +77,8 @@
   margin: 21px auto 0;
 
   &__title {
-    font: 500 23px $font-text
+    font: 500 23px $font-text;
+    padding: 0 0 0 8px;
   }
 
   &__list {
@@ -79,15 +95,19 @@
   position: relative;
   display: flex;
   justify-content: start;
+  background: #f3f3f3;
+  box-shadow: 3px 7px 30px -9px rgba(0, 0, 0, 0.20);
   height: 67px;
   width: 313px;
   text-align: center;
-  border: 1px solid black;
   border-radius: 20px;
 
-
   &:hover {
-    background: rgba(147, 86, 220, 0.15);
+    background: #f5edff;
+    box-shadow: 3px 7px 30px -9px rgba(0, 0, 0, 0.35);
+  }
+
+  &:hover .list-item__logo {
     color: #9356DC;
   }
 
@@ -105,16 +125,18 @@
 
 
   &__logo {
-    padding: 20px 0 0 0;
+    padding: 22px 0 0 0;
     height: 20px;
     width: 60px;
     font-size: 19px;
+    color: #808080;
   }
 
   &__name {
-    font: 700 16px Shirkhand, sans-serif;
+    font: 700 16px $font-text;
     height: 16px;
     padding: 23px 0 0 0;
+    cursor: default;
   }
 }
 
@@ -127,8 +149,8 @@
   height: 1180px;
 
   &__title {
-    font: 500 23px $font-text;
-    padding: 39px 0px 19px 26px;
+    font: normal 500 23px $font-text;
+    padding: 39px 0 19px 26px;
   }
 
   &__cards {
@@ -166,12 +188,12 @@
 
 
     &--name {
-      font: 400 19px $font-text;
+      font: 500 19px $font-text;
       line-height: 1.1;
     }
 
     &--location {
-      font: 400 16px $font-text;
+      font: 300 16px $font-text;
     }
 
     &--heart {
@@ -179,18 +201,28 @@
       width: 13%;
     }
   }
+}
 
-  .new::after {
-    position: absolute;
-    content: "Nouveau";
-    height: 34px;
-    width: 76px;
-    top: 9px;
-    right: 10px;
-    background: #99E2D0;
-    text-align: center;
-    padding-top: 5px;
-  }
+.fa-heart:hover:before {
+  font-family: FontAwesome;
+  content: "\f004";
+  background: linear-gradient(150deg, rgba(245, 118, 219, 1) 0%, rgba(160, 90, 220, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heart 1s;
+}
+
+.new::after {
+  position: absolute;
+  content: "Nouveau";
+  height: 34px;
+  width: 76px;
+  top: 9px;
+  right: 10px;
+  background: #a1edda;
+  font: 300 15px $font-text;
+  text-align: center;
+  padding-top: 8px;
 }
 
 /*//
@@ -198,18 +230,18 @@
 //*/
 
 .footer {
-  background: rgba(128, 128, 128, 0.75);
+  background: #353535;
   height: 175px;
 
   &__title {
-    padding: 23px 0 0 25px;
-    font: 400 29px $font-headings;
+    padding: 24px 0 0 27px;
+    font: 100 23px $font-headings;
     color: white;
   }
 }
 
 .footer-list {
-  padding: 8px 0px 0px 28px;
+  padding: 8px 0 0 28px;
   font-family: $font-text;
 
   &__item {
@@ -225,3 +257,12 @@
 .footer-icon {
   width: 21px;
 }
+
+.fa-utensils {
+  font-size: 20px;
+}
+
+.fa-handshake-angle {
+  font-size: 15px;
+}
+
