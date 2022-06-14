@@ -33,8 +33,7 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-/*COLORS*/
-/*FONTS*/
+/*ANIMATIONS*/
 @keyframes heart {
   from {
     opacity: 0.4;
@@ -126,6 +125,7 @@ p, h1, h2, h3, h4, h5, h6 {
   padding: 0 0 0 15px;
 }
 .nav__list {
+  counter-reset: counter-item 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -135,6 +135,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .list-item {
+  counter-increment: counter-item 1;
   position: relative;
   display: flex;
   justify-content: start;
@@ -154,7 +155,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 .list-item::before {
   position: absolute;
-  content: "1";
+  content: counter(counter-item);
   height: 23px;
   width: 23px;
   top: 19px;
@@ -229,7 +230,6 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 .card__text--heart {
   font-size: 29px;
-  padding: 0 7px 0 0;
 }
 
 .fa-heart:hover:before {
