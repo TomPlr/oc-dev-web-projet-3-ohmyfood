@@ -82,6 +82,7 @@
   }
 
   &__list {
+    counter-reset: counter-item 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -92,6 +93,7 @@
 }
 
 .list-item {
+  counter-increment: counter-item 1;
   position: relative;
   display: flex;
   justify-content: start;
@@ -113,7 +115,7 @@
 
   &::before {
     position: absolute;
-    content: "1";
+    content: counter(counter-item);
     height: 23px;
     width: 23px;
     top: 19px;
