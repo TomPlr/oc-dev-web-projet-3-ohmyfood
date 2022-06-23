@@ -4,18 +4,6 @@
 //*/
 
 .header {
-  &__title {
-    position: relative;
-    font-family: $font-headings;
-    font-size: 37px;
-    height: 83px;
-    width: 100%;
-    padding-top: 13px;
-    text-align: center;
-    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.10);
-  }
-
-
   &__location {
     background: #f3f3f3;
     height: 75px;
@@ -50,20 +38,16 @@
     font: 500 16px $font-text;
     text-align: center;
     color: #8b8b8b;
+
   }
+}
 
-  &__btn {
-    padding: 18px 24px;
-    border-radius: 30px;
-    border: none;
-    background: linear-gradient(150deg, rgba(245, 118, 219, 1) 0%, rgba(160, 90, 220, 1) 100%);
-    font: 600 15px $font-text;
-    color: $color-light;
+.btn {
+  @include button;
 
-    &:hover {
-      cursor: pointer;
-      animation: button 1s ease forwards;
-    }
+  &:hover {
+    cursor: pointer;
+    animation: button 1s ease forwards;
   }
 }
 
@@ -226,50 +210,3 @@
   text-align: center;
   padding-top: 8px;
 }
-
-/*//
-//FOOTER
-//*/
-
-.footer {
-  background: #353535;
-  height: 175px;
-
-  &__title {
-    padding: 22px 0 0 35px;
-    font: 100 23px $font-headings;
-    color: white;
-  }
-}
-
-.footer-list {
-  padding: 8px 0 0 34px;
-  font-family: $font-text;
-
-  &__item {
-    list-style: none;
-
-  }
-}
-
-.footer-link {
-  text-decoration: none;
-  color: $color-light;
-
-  &:hover {
-    font-weight: 700;
-  }
-}
-
-.footer-icon {
-  width: 21px;
-}
-
-.fa-utensils {
-  font-size: 20px;
-}
-
-.fa-handshake-angle {
-  font-size: 15px;
-}
-

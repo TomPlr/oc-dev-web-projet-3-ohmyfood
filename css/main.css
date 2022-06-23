@@ -52,7 +52,7 @@ p, h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(360deg, rgb(245, 118, 219) 0%, rgb(160, 90, 220) 100%);
   }
 }
-/*############################## HOME PAGE ###################################*/
+/*############################## LAYOUTS ###################################*/
 /*//
 //HEADER
 //*/
@@ -66,6 +66,52 @@ p, h1, h2, h3, h4, h5, h6 {
   text-align: center;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
 }
+
+/*//
+//FOOTER
+//*/
+.footer {
+  background: #353535;
+  height: 175px;
+}
+.footer__title {
+  padding: 22px 0 0 35px;
+  font: 100 23px "Shrikhand", sans-serif;
+  color: white;
+}
+
+.footer-list {
+  padding: 8px 0 0 34px;
+  font-family: "Roboto", sans-serif;
+}
+.footer-list__item {
+  list-style: none;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: white;
+}
+.footer-link:hover {
+  font-weight: 700;
+}
+
+.footer-icon {
+  width: 21px;
+}
+
+.fa-utensils {
+  font-size: 20px;
+}
+
+.fa-handshake-angle {
+  font-size: 15px;
+}
+
+/*############################## HOME PAGE ###################################*/
+/*//
+//HEADER
+//*/
 .header__location {
   background: #f3f3f3;
   height: 75px;
@@ -99,7 +145,8 @@ p, h1, h2, h3, h4, h5, h6 {
   text-align: center;
   color: #8b8b8b;
 }
-.reservation__btn {
+
+.btn {
   padding: 18px 24px;
   border-radius: 30px;
   border: none;
@@ -107,7 +154,7 @@ p, h1, h2, h3, h4, h5, h6 {
   font: 600 15px "Roboto", sans-serif;
   color: white;
 }
-.reservation__btn:hover {
+.btn:hover {
   cursor: pointer;
   animation: button 1s ease forwards;
 }
@@ -254,45 +301,9 @@ p, h1, h2, h3, h4, h5, h6 {
   padding-top: 8px;
 }
 
+/*############################## LE DELICE DES SENS ###################################*/
 /*//
-//FOOTER
+//HEADER
 //*/
-.footer {
-  background: #353535;
-  height: 175px;
-}
-.footer__title {
-  padding: 22px 0 0 35px;
-  font: 100 23px "Shrikhand", sans-serif;
-  color: white;
-}
-
-.footer-list {
-  padding: 8px 0 0 34px;
-  font-family: "Roboto", sans-serif;
-}
-.footer-list__item {
-  list-style: none;
-}
-
-.footer-link {
-  text-decoration: none;
-  color: white;
-}
-.footer-link:hover {
-  font-weight: 700;
-}
-
-.footer-icon {
-  width: 21px;
-}
-
-.fa-utensils {
-  font-size: 20px;
-}
-
-.fa-handshake-angle {
-  font-size: 15px;
-}
 
 /*# sourceMappingURL=main.css.map */
