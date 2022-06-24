@@ -1,0 +1,46 @@
+
+/*//
+//FOOTER
+//*/
+
+.footer {
+  background: #353535;
+  height: 175px;
+
+  &__title {
+    padding: 22px 0 0 35px;
+    font: 100 23px $font-headings;
+    color: white;
+  }
+}
+
+.footer-list {
+  padding: 8px 0 0 34px;
+  font-family: $font-text;
+
+  &__item {
+    list-style: none;
+
+  }
+}
+
+.footer-link {
+  text-decoration: none;
+  color: $color-light;
+
+  &:hover {
+    font-weight: 700;
+  }
+}
+
+.footer-icon {
+  width: 21px;
+}
+
+.fa-utensils {
+  font-size: 20px;
+}
+
+.fa-handshake-angle {
+  font-size: 15px;
+}
