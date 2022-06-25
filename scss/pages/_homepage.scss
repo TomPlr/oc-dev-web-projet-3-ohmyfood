@@ -157,6 +157,7 @@
   border-radius: 20px;
   text-decoration: none;
   color: $color-dark;
+  box-shadow: 3px 7px 30px -9px rgba(0, 0, 0, 0.20);
 
   &__img {
     width: 100%;
@@ -185,6 +186,7 @@
 
     &--heart {
       font-size: 29px;
+      z-index: 2;
     }
   }
 }

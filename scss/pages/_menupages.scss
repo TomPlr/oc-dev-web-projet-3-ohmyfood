@@ -9,6 +9,9 @@
 //*/
 
 .main{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   position: relative;
   height: 1384px;
   width: 100%;
@@ -20,20 +23,16 @@
 .restaurant{
   display: flex;
   justify-content: space-between;
-  width: 327px;
-  padding: 37px 0px 0px 0px;
-  margin: 0 auto;
+  width: 90%;
+  padding: 37px 12px 37px 13px;
 
   &__name{
     font: 100 25px "Shrikhand", sans-serif;
   }
 }
-
 .menu{
-  width: 344px;
-  margin: 35px auto 0;
+  width: 90%;
 }
-
 .menu-part{
   margin-bottom: 60px;
 
@@ -67,7 +66,7 @@
   background: $color-light;
   list-style: none;
   height: 76px;
-  width: 350px;
+  width: 100%;
   border-radius: 12px;
   box-shadow: 3px 7px 30px -9px rgba(0, 0, 0, 0.20);
 
@@ -80,20 +79,27 @@
   }
 
   &__description{
+    display: block;
     font-weight: 300;
     font-size: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 271px;
+    overflow: hidden
   }
 
   &__price{
     font-weight: 600;
-    margin: 40px 15px 0px 0px;
+    height: 100%;
+    width: 46px;
+    padding: 35px 48px 0px 0px;
   }
 }
 
 .order__btn{
   display: block;
   width: 211px;
-  margin: 76px auto 0;
+  margin: 11px auto 0;
 }
 
 
