@@ -1,14 +1,24 @@
-/*############################## LE DELICE DES SENS ###################################*/
+/*############################## RESTAURANT PAGES ###################################*/
 /*//
 //HEADER
 //*/
 
+.header__previous-page {
+  position: absolute;
+  color: $color-dark;
+  left: 5%;
+  top: 18px;
+  height: 50px;
+  width: 30px;
+  font-size: 30px;
+  z-index: 2;
+}
 
 /*//
 //MAIN
 //*/
 
-.main{
+.main {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -20,29 +30,29 @@
   border-radius: 30px 30px 0 0;
 }
 
-.restaurant{
+.restaurant {
   display: flex;
   justify-content: space-between;
   width: 90%;
   padding: 37px 12px 37px 13px;
 
-  &__name{
-    font: 100 25px "Shrikhand", sans-serif;
+  &__name {
+    font: 100 25px 'Shrikhand', sans-serif;
   }
 }
-.menu{
+.menu {
   width: 90%;
 }
-.menu-part{
+.menu-part {
   margin-bottom: 60px;
 
-  &__title{
+  &__title {
     position: relative;
     font: 100 19px $font-text;
     text-transform: uppercase;
 
-    &:after{
-      content: "";
+    &:after {
+      content: '';
       position: absolute;
       bottom: -12px;
       left: 0px;
@@ -52,7 +62,7 @@
     }
   }
 }
-.dishes{
+.dishes {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -60,11 +70,11 @@
   padding: 32px 0 0 0;
   font-family: $font-text;
 }
-.dish-container{
+.dish-container {
   display: flex;
   justify-content: space-between;
 }
-.dish{
+.dish {
   display: flex;
   justify-content: space-between;
   background: $color-light;
@@ -72,25 +82,23 @@
   height: 76px;
   width: 100%;
   border-radius: 12px;
-  box-shadow: 3px 7px 30px -9px rgba(0, 0, 0, 0.20);
+  box-shadow: 3px 7px 30px -9px rgba(0, 0, 0, 0.2);
 
-
-  &:hover{
+  &:hover {
     cursor: pointer;
     border-radius: 12px 0 0 12px;
-
   }
 
-  &:hover &__name{
+  &:hover &__name {
     width: 220px;
   }
 
-  &:hover + &__pick{
+  &:hover + &__pick {
     width: 76px;
     animation: pick 1s ease forwards;
   }
 
-  &__name{
+  &__name {
     font-weight: 600;
     font-size: 18px;
     height: 43px;
@@ -99,27 +107,27 @@
     line-height: 1.3;
     white-space: nowrap;
     text-overflow: ellipsis;
-    overflow: hidden
+    overflow: hidden;
   }
 
-  &__description{
+  &__description {
     display: block;
     font-weight: 300;
     font-size: 16px;
     white-space: nowrap;
     text-overflow: ellipsis;
     max-width: 400px;
-    overflow: hidden
+    overflow: hidden;
   }
 
-  &__price{
+  &__price {
     font-weight: 600;
     height: 100%;
     width: 46px;
     padding: 35px 48px 0 0;
   }
 
-  &__pick{
+  &__pick {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,23 +139,22 @@
   }
 }
 
-.fa-circle-check{
+.fa-circle-check {
   color: $color-light;
   font-size: 30px;
 }
 
-.order__btn{
+.order__btn {
   display: block;
   width: 211px;
   margin: 11px auto 0;
 }
 
-
 /*//
 //FOOTER
 //*/
 
-.menu-footer{
+.menu-footer {
   position: relative;
-  top:-40px;
+  top: -40px;
 }

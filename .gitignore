@@ -7,3 +7,6 @@ scss/.DS_Store
 
 #Webstorm File Watcher
 .idea
+
+#node_modules
+node_modules
