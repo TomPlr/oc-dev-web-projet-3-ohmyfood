@@ -1,22 +1,32 @@
 /*############################## HOME PAGE ###################################*/
-/*//
-//HEADER
-//*/
+//######## HEADER ######
 
 .header {
   &__location {
-    background: #f3f3f3;
-    height: 75px;
-    text-align: center;
-    font: normal 600 19px $font-text;
-    padding-top: 26px;
-    color: #808080;
+    background: $color-light-2;
+    width: 100%;
   }
 }
 
-.fa-location-dot {
-  font-size: 15px;
-  margin-right: 5px;
+.city-name {
+  position: relative;
+  text-align: center;
+  font: normal 600 16px $font-text;
+  color: #808080;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 15px 0;
+  background: none;
+
+  &::before {
+    content: '\f3c5';
+    position: absolute;
+    font-family: FontAwesome;
+    font-size: 16px;
+    height: 10px;
+    width: 10px;
+    left: -28px;
+  }
 }
 
 .reservation {
@@ -25,44 +35,40 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  height: 280px;
-  padding: 29px 0 53px 0;
 
   &__title {
     font: 700 23px $font-text;
     text-align: center;
+    width: 60%;
+    margin: 40px auto 0;
   }
 
   &__text {
-    margin: 0 0 22px 0;
     font: 500 16px $font-text;
     text-align: center;
     color: #8b8b8b;
-
+    margin: 17px auto 0;
   }
 }
 
 .btn {
   @include button;
+  transition: transform 300ms;
 
   &:hover {
     cursor: pointer;
-    animation: button 1s ease forwards;
+    transform: scale(1.05);
   }
 }
 
-/*//
-//NAV
-//*/
+//###### NAV ########
 
 .nav {
-  height: 368px;
-  width: 90%;
-  margin: 21px auto 0;
+  width: 89%;
+  margin: 49px auto 0;
 
   &__title {
-    font: 500 23px $font-text;
-    padding: 0 0 0 15px;
+    font: 500 24px $font-text;
   }
 
   &__list {
@@ -70,9 +76,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 270px;
-    margin: 18px 0 0 0;
-    padding: 0 0 0 24px;
+    align-items: flex-end;
+    padding: 0;
+    width: 100%;
+    margin: 15px auto 51px;
   }
 }
 
@@ -82,11 +89,11 @@
   display: flex;
   justify-content: start;
   background: #f3f3f3;
-  box-shadow: 3px 7px 30px -9px rgba(0, 0, 0, 0.20);
-  height: 67px;
-  width: 96%;
+  box-shadow: 3px 7px 30px -9px rgba(0, 0, 0, 0.2);
+  width: 97%;
   text-align: center;
   border-radius: 20px;
+  margin: 17px 0;
 
   &:hover {
     background: #f5edff;
@@ -94,7 +101,7 @@
   }
 
   &:hover .list-item__logo {
-    color: #9356DC;
+    color: #9356dc;
   }
 
   &::before {
@@ -102,66 +109,58 @@
     content: counter(counter-item);
     height: 23px;
     width: 23px;
-    top: 19px;
-    left: -12px;
     border-radius: 100%;
-    background: #9356DC;
+    background: $color-primary;
     color: $color-light;
+    transform: translate(-10px, 20px);
   }
 
-
   &__logo {
-    padding: 22px 0 0 0;
-    height: 20px;
-    width: 60px;
     font-size: 19px;
     color: #808080;
+    margin: auto 20px auto 35px;
   }
 
   &__name {
-    font: 700 16px $font-text;
-    height: 16px;
-    padding: 23px 0 0 0;
+    font: 700 16px 'Roboto', sans-serif;
+    padding: 23px 0;
     cursor: default;
   }
 }
 
-/*//
-//RESTAURANTS
-//*/
+//######## RESTAURANTS ######
 
 .restaurants {
   background: #f3f3f3;
-  height: 1180px;
+  padding-bottom: 46px;
 
   &__title {
-    font: normal 500 23px $font-text;
-    padding: 37px 0 16px 35px;
+    font: normal 500 24px $font-text;
+    margin: 0 auto;
+    width: 89%;
+    padding: 54px 0 23px;
   }
 
   &__cards {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
-    height: 1031px;
   }
 }
 
 .card {
   position: relative;
   background: $color-light;
-  height: 230px;
-  width: 82%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 0px auto 16px;
   border-radius: 20px;
   text-decoration: none;
   color: $color-dark;
-  box-shadow: 3px 7px 30px -9px rgba(0, 0, 0, 0.20);
+  box-shadow: 3px 7px 30px -9px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 
   &__img {
     width: 100%;
-    height: 70%;
+    height: 174px;
     border-radius: 20px 20px 0 0;
     object-fit: cover;
   }
@@ -170,45 +169,49 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 30%;
-    width: 89%;
-    margin: 0 auto;
-
+    width: 92%;
+    margin: 17px auto;
 
     &--name {
-      font: 500 19px $font-text;
-      line-height: 1.1;
+      font: 500 18px $font-text;
+      line-height: 1.25;
     }
 
     &--location {
-      font: 300 16px $font-text;
+      font: 300 17px $font-text;
     }
 
     &--heart {
-      font-size: 29px;
-      z-index: 2;
+      position: relative;
+      font-size: 23px;
+      padding: 0 11px 10px;
+      z-index: 10;
     }
   }
 }
 
 .fa-heart:hover:before {
   font-family: FontAwesome;
-  content: "\f004";
-  background: linear-gradient(150deg, rgba(245, 118, 219, 1) 0%, rgba(160, 90, 220, 1) 100%);
+  content: '\f004';
+  background: linear-gradient(
+    150deg,
+    rgba(245, 118, 219, 1) 0%,
+    rgba(160, 90, 220, 1) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: heart 1s;
+  pointer-events: none;
 }
 
 .new::after {
   position: absolute;
-  content: "Nouveau";
-  height: 34px;
-  width: 76px;
-  top: 11px;
-  right: 10px;
+  content: 'Nouveau';
+  width: 80px;
+  top: 12px;
+  right: 13px;
   background: #a1edda;
   font: 300 15px $font-text;
   text-align: center;
-  padding-top: 8px;
+  padding: 6px;
 }

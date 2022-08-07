@@ -1,35 +1,36 @@
-
-/*//
-//FOOTER
-//*/
+/* FOOTER */
 
 .footer {
   background: #353535;
-  height: 175px;
 
   &__title {
-    padding: 22px 0 0 35px;
-    font: 100 23px $font-headings;
-    color: white;
+    font: 100 18px $font-headings;
+    color: $color-light;
+    width: 86%;
+    margin: 0px auto;
+    padding-top: 21px;
   }
 }
 
 .footer-list {
-  padding: 8px 0 0 34px;
   font-family: $font-text;
+  font-weight: 400;
+  width: 88%;
+  margin: 16px auto 0;
+  padding: 0 0 40px 0;
+  line-height: 25px;
 
   &__item {
     list-style: none;
-
   }
 }
 
 .footer-link {
   text-decoration: none;
-  color: $color-light;
+  color: $color-light-transparent;
 
   &:hover {
-    font-weight: 700;
+    color: $color-light;
   }
 }
 
@@ -38,9 +39,9 @@
 }
 
 .fa-utensils {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .fa-handshake-angle {
-  font-size: 15px;
+  font-size: 13px;
 }

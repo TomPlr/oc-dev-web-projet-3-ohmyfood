@@ -1,5 +1,4 @@
-/*ANIMATIONS*/
-
+/*############################## ANIMATIONS ################################*/
 @keyframes heart {
   from {
     opacity: 0.4;
@@ -12,20 +11,28 @@
 @keyframes button {
   from {
     transform: scale(1);
-    background: linear-gradient(150deg, rgba(245, 118, 219, 1) 0%, rgba(160, 90, 220, 1) 100%);
+    background: linear-gradient(
+      150deg,
+      rgba(245, 118, 219, 1) 0%,
+      rgba(160, 90, 220, 1) 100%
+    );
   }
 
   to {
     transform: scale(1.05);
-    background: linear-gradient(360deg, rgba(245, 118, 219, 1) 0%, rgba(160, 90, 220, 1) 100%);
+    background: linear-gradient(
+      360deg,
+      rgba(245, 118, 219, 1) 0%,
+      rgba(160, 90, 220, 1) 100%
+    );
   }
 }
 
 @keyframes pick {
   0% {
-    width: 0%;
+    width: 0;
   }
   100% {
-    width:100%;
+    width: 76px;
   }
 }

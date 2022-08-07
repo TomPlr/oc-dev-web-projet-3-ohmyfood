@@ -1,0 +1,100 @@
+/*############################## MEDIA QUERIES ###################################*/
+/*######## HOME PAGE ########*/
+
+/* DESKTOP */
+@media screen and (min-width: 992px) {
+  .nav__title {
+    width: 95%;
+    margin: 0 auto;
+  }
+  .nav__list {
+    flex-direction: row;
+    width: 95%;
+  }
+  .list-item {
+    width: 31%;
+  }
+
+  .restaurants__cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .restaurants__title {
+    width: 95%;
+  }
+
+  .card {
+    width: 47%;
+    margin: 0px auto 30px;
+  }
+
+  .footer__title {
+    width: fit-content;
+    font-size: 35px;
+  }
+
+  .footer-list {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    max-width: 850px;
+    text-align: center;
+  }
+}
+
+/*######## MENU PAGES ########*/
+/* DESKTOP */
+
+@media screen and (min-width: 768px) {
+  .header__title {
+    background: $color-light;
+  }
+  .header__img {
+    height: 100vh;
+    object-fit: cover;
+    width: 100%;
+    position: fixed;
+    top: 0;
+  }
+
+  .main {
+    background: none;
+    padding-bottom: 25px;
+  }
+
+  .menu {
+    min-width: 600px;
+  }
+
+  .restaurant {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 26px auto;
+    padding: 30px 0;
+    background: white;
+    width: 100%;
+  }
+
+  .menu {
+    width: 45%;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+
+  .menu-part__title {
+    font-weight: 500;
+    color: $color-light;
+  }
+
+  .order__btn {
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  .menu-footer {
+    top: 0;
+  }
+}

@@ -1,15 +1,13 @@
 /*############################## LAYOUTS ###################################*/
-/*//
-//HEADER
-//*/
+/* HEADER */
 
 .header__title {
   position: relative;
-  font-family: $font-headings;
-  font-size: 37px;
-  height: 83px;
+  font-family: 'Shrikhand', sans-serif;
+  font-size: 30px;
   width: 100%;
-  padding-top: 13px;
   text-align: center;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+  padding: 13px 0 5px;
+  z-index: 2;
 }
