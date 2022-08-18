@@ -4,10 +4,11 @@
   border: none;
   margin: 30px auto 53px;
   background: linear-gradient(
-    150deg,
-    rgba(245, 118, 219, 1) 0%,
-    rgba(160, 90, 220, 1) 100%
+    169deg,
+    $color-secondary 20%,
+    $color-primary 100%
   );
-  font: 600 16px $font-text;
+  font: 600 16px 'Roboto', sans-serif;
   color: $color-light;
+  transition: transform 300ms;
 }

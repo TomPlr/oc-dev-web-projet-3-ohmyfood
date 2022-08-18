@@ -1,30 +1,10 @@
 /*############################## ANIMATIONS ################################*/
 @keyframes heart {
   from {
-    opacity: 0.4;
+    opacity: 0.3;
   }
   to {
     opacity: 1;
-  }
-}
-
-@keyframes button {
-  from {
-    transform: scale(1);
-    background: linear-gradient(
-      150deg,
-      rgba(245, 118, 219, 1) 0%,
-      rgba(160, 90, 220, 1) 100%
-    );
-  }
-
-  to {
-    transform: scale(1.05);
-    background: linear-gradient(
-      360deg,
-      rgba(245, 118, 219, 1) 0%,
-      rgba(160, 90, 220, 1) 100%
-    );
   }
 }
 
@@ -35,4 +15,28 @@
   100% {
     width: 76px;
   }
+}
+
+@keyframes dishes-apparition {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dish-container:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.dish-container:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.dish-container:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.dish-container:nth-child(4) {
+  animation-delay: 0.7s;
 }

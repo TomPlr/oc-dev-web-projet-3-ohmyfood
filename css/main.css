@@ -58,20 +58,10 @@ h6 {
 /*############################## ANIMATIONS ################################*/
 @keyframes heart {
   from {
-    opacity: 0.4;
+    opacity: 0.3;
   }
   to {
     opacity: 1;
-  }
-}
-@keyframes button {
-  from {
-    transform: scale(1);
-    background: linear-gradient(150deg, rgb(245, 118, 219) 0%, rgb(160, 90, 220) 100%);
-  }
-  to {
-    transform: scale(1.05);
-    background: linear-gradient(360deg, rgb(245, 118, 219) 0%, rgb(160, 90, 220) 100%);
   }
 }
 @keyframes pick {
@@ -82,6 +72,32 @@ h6 {
     width: 76px;
   }
 }
+@keyframes dishes-apparition {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dish-container:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.dish-container:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.dish-container:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.dish-container:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
 /*############################## LAYOUTS ###################################*/
 /* HEADER */
 .header__title {
@@ -121,7 +137,7 @@ h6 {
 
 .footer-link {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9019607843);
 }
 .footer-link:hover {
   color: white;
@@ -139,6 +155,126 @@ h6 {
   font-size: 13px;
 }
 
+body {
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.orbit-text {
+  border-radius: 50%;
+}
+
+/* ---------- Container for the orbiting circles animation ---------- */
+.circle-orbit-container {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+}
+
+/* ---------- Inner orbit - This is the circles closest to the central point ---------- */
+.inner-orbit {
+  position: absolute;
+  top: 75px;
+  left: 75px;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  border: 7px solid rgba(0, 0, 255, 0.142);
+  -webkit-animation: spin-right 8s linear infinite;
+  animation: spin-right 8s linear infinite;
+}
+
+/* ---------- Repeating styles for the inner orbiting circles ---------- */
+.inner-orbit-circles {
+  position: absolute;
+  top: -8px;
+  left: 51px;
+  height: 40px;
+  width: 80px;
+  background: white;
+  text-align: center;
+  font-size: 24px;
+  transform: rotate(15deg);
+}
+
+/* ---------- Middle orbit - This is the circles second closest to the central point ---------- */
+.middle-orbit {
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  width: 225px;
+  height: 225px;
+  border-radius: 100%;
+  border: 7px solid rgba(0, 128, 0, 0.167);
+  -webkit-animation: spin-left 6s linear infinite;
+  animation: spin-left 6s linear infinite;
+}
+
+/* ---------- Repeating styles for the inner orbiting circles ---------- */
+.middle-orbit-circles {
+  position: absolute;
+  top: -7px;
+  left: 113px;
+  height: 21px;
+  width: 55px;
+  background: white;
+  text-align: center;
+  font-size: 24px;
+  transform: rotate(10deg);
+}
+
+/* ---------- Outer orbit - This is the circles furthest away from the central point ---------- */
+.outer-orbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 294px;
+  height: 294px;
+  border-radius: 100%;
+  border: 7px solid rgba(255, 0, 0, 0.086);
+  -webkit-animation: spin-right 7s linear infinite;
+  animation: spin-right 7s linear infinite;
+}
+
+/* ---------- Repeating styles for the outer orbiting circles ---------- */
+.outer-orbit-circles {
+  position: absolute;
+  top: -13px;
+  left: 125px;
+  height: 24px;
+  width: 55px;
+  background: white;
+  text-align: center;
+  font-size: 24px;
+  transform: rotate(5deg);
+}
+
+/* ---------- Animation ---------- */
+@-webkit-keyframes spin-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin-left {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
 /*############################## HOME PAGE ###################################*/
 .header__location {
   background: #eaeaea;
@@ -190,14 +326,15 @@ h6 {
   border-radius: 30px;
   border: none;
   margin: 30px auto 53px;
-  background: linear-gradient(150deg, rgb(245, 118, 219) 0%, rgb(160, 90, 220) 100%);
+  background: linear-gradient(169deg, #ff79da 20%, #9356dc 100%);
   font: 600 16px "Roboto", sans-serif;
   color: white;
   transition: transform 300ms;
 }
 .btn:hover {
   cursor: pointer;
-  transform: scale(1.05);
+  background: linear-gradient(175deg, #ff8cde 20%, #9664d4 100%);
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.25);
 }
 
 .nav {
@@ -273,16 +410,22 @@ h6 {
   flex-direction: column;
 }
 
-.card {
+.card-container {
   position: relative;
   background: white;
   width: 90%;
   margin: 0px auto 16px;
   border-radius: 20px;
-  text-decoration: none;
-  color: black;
   box-shadow: 3px 7px 30px -9px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+}
+
+.card {
+  color: #000000;
+  text-decoration: none;
+}
+.card__link {
+  color: #000000;
+  text-decoration: none;
 }
 .card__img {
   width: 100%;
@@ -304,11 +447,25 @@ h6 {
 .card__text--location {
   font: 300 17px "Roboto", sans-serif;
 }
-.card__text--heart {
-  position: relative;
+
+.card-heart--homepage {
+  position: absolute;
   font-size: 23px;
-  padding: 0 11px 10px;
-  z-index: 10;
+  bottom: 35px;
+  right: 25px;
+}
+.card-heart--homepage:hover {
+  cursor: pointer;
+}
+
+.card-heart--menupages {
+  position: absolute;
+  font-size: 23px;
+  top: 38px;
+  right: 18px;
+}
+.card-heart--menupages:hover {
+  cursor: pointer;
 }
 
 .fa-heart:hover:before {
@@ -336,13 +493,21 @@ h6 {
 /*############################## RESTAURANT PAGES ###################################*/
 .header__previous-page {
   position: absolute;
-  color: black;
+  color: #000000;
   left: 23px;
   top: 19px;
   height: 50px;
   width: 30px;
   font-size: 21px;
   z-index: 3;
+}
+
+.header__img {
+  display: block;
+  width: 100%;
+  height: 38vh;
+  object-fit: cover;
+  object-position: center;
 }
 
 .main {
@@ -412,6 +577,19 @@ h6 {
   margin: 0 auto;
   width: 93%;
   margin-bottom: 13px;
+  animation: dishes-apparition 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.dish-container:hover {
+  cursor: pointer;
+}
+.dish-container:hover .dish__pick {
+  width: 70px;
+  height: auto;
+  animation: pick 800ms ease forwards;
+}
+.dish-container:hover .dish__pick .fa-circle-check {
+  transform: rotate(360deg);
+  transition: transform 800ms ease-in-out;
 }
 
 .dish {
@@ -425,19 +603,6 @@ h6 {
   width: 100%;
   border-radius: 12px;
   box-shadow: 3px 7px 30px -9px rgba(0, 0, 0, 0.2);
-}
-.dish:hover {
-  cursor: pointer;
-  border-radius: 12px 0 0 12px;
-}
-.dish:hover + .dish__pick {
-  width: 70px;
-  height: auto;
-  animation: pick 1s ease forwards;
-}
-.dish:hover + .dish__pick .fa-circle-check {
-  transform: rotate(-360deg);
-  transition: transform 300ms ease-in-out;
 }
 .dish__name {
   font-weight: 600;
@@ -516,7 +681,7 @@ h6 {
   .restaurants__title {
     width: 95%;
   }
-  .card {
+  .card-container {
     width: 47%;
     margin: 0px auto 30px;
   }
@@ -544,6 +709,7 @@ h6 {
     width: 100%;
     position: fixed;
     top: 0;
+    filter: brightness(0.5);
   }
   .main {
     background: none;
