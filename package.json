@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch scss/main.scss:css/main.css"
+    "sass": "sass --watch scss/main.scss:css/main.css",
+    "autoprefixer": "postcss ./css/main.css -u autoprefixer -o ./css/main-min.css",
+    "nano": "postcss ./css/main.css -u autoprefixer cssnano -o ./css/main-nano.css"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,11 @@
   },
   "homepage": "https://github.com/TomPlr/oc-projet-3-ohmyfood#readme",
   "dependencies": {
+    "postcss-cli": "^10.0.0",
     "sass": "^1.54.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "cssnano": "^5.1.13"
   }
 }

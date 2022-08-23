@@ -1,11 +1,11 @@
 .loading-container {
   height: 100vh;
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-content: center;
   width: 100%;
-  z-index: 10;
+  z-index: 3;
   opacity: 1;
   background: $color-background-loading;
   overflow-y: hidden;
