@@ -100,11 +100,10 @@
   &:hover .dish__pick {
     width: 70px;
     height: auto;
-    animation: pick 800ms ease forwards;
 
     & .fa-circle-check {
       transform: rotate(360deg);
-      transition: transform 800ms ease-in-out;
+      transition: transform 500ms ease-in-out;
     }
   }
 }
@@ -160,6 +159,7 @@
     height: 100%;
     border-radius: 0 12px 12px 0;
     overflow: hidden;
+    transition: width 500ms ease-out;
   }
 }
 

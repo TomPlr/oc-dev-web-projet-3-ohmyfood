@@ -56,9 +56,36 @@ h6 {
 }
 
 /*############################## ANIMATIONS ################################*/
+@keyframes loading-spinner {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes spin-right {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin-left {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes hide-scroll {
+  from, to {
+    overflow: hidden;
+  }
+}
 @keyframes heart {
   from {
-    opacity: 0.3;
+    opacity: 0.2;
   }
   to {
     opacity: 1;
@@ -117,7 +144,7 @@ h6 {
 }
 .footer__title {
   font: 100 18px "Shrikhand", sans-serif;
-  color: white;
+  color: #ffffff;
   width: 86%;
   margin: 0px auto;
   padding-top: 21px;
@@ -140,7 +167,7 @@ h6 {
   color: rgba(255, 255, 255, 0.9019607843);
 }
 .footer-link:hover {
-  color: white;
+  color: #ffffff;
 }
 
 .footer-icon {
@@ -155,22 +182,26 @@ h6 {
   font-size: 13px;
 }
 
-body {
-  margin: 0;
-}
-
 .loading-container {
   height: 100vh;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-content: center;
+  width: 100%;
+  z-index: 10;
+  opacity: 1;
+  background: #d6b5ff;
+  overflow-y: hidden;
+  animation: loading-spinner 2s forwards;
 }
 
 .orbit-text {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 23px;
   border-radius: 50%;
 }
 
-/* ---------- Container for the orbiting circles animation ---------- */
 .circle-orbit-container {
   position: relative;
   height: 300px;
@@ -178,7 +209,6 @@ body {
   margin: auto;
 }
 
-/* ---------- Inner orbit - This is the circles closest to the central point ---------- */
 .inner-orbit {
   position: absolute;
   top: 75px;
@@ -186,25 +216,23 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 100%;
-  border: 7px solid rgba(0, 0, 255, 0.142);
-  -webkit-animation: spin-right 8s linear infinite;
-  animation: spin-right 8s linear infinite;
+  border: 10px solid #9356dc;
+  -webkit-animation: spin-right 3s linear infinite;
+  animation: spin-right 3s linear infinite;
 }
 
-/* ---------- Repeating styles for the inner orbiting circles ---------- */
 .inner-orbit-circles {
   position: absolute;
   top: -8px;
   left: 51px;
-  height: 40px;
-  width: 80px;
-  background: white;
+  width: 100px;
+  background: #d6b5ff;
   text-align: center;
-  font-size: 24px;
-  transform: rotate(15deg);
+  transform: rotate(44deg);
+  padding: 13px;
+  border-radius: 0;
 }
 
-/* ---------- Middle orbit - This is the circles second closest to the central point ---------- */
 .middle-orbit {
   position: absolute;
   top: 35px;
@@ -212,25 +240,23 @@ body {
   width: 225px;
   height: 225px;
   border-radius: 100%;
-  border: 7px solid rgba(0, 128, 0, 0.167);
-  -webkit-animation: spin-left 6s linear infinite;
-  animation: spin-left 6s linear infinite;
+  border: 10px solid #98e2cf;
+  -webkit-animation: spin-left 5s linear infinite;
+  animation: spin-left 5s linear infinite;
 }
 
-/* ---------- Repeating styles for the inner orbiting circles ---------- */
 .middle-orbit-circles {
   position: absolute;
-  top: -7px;
+  top: -13px;
   left: 113px;
-  height: 21px;
-  width: 55px;
-  background: white;
+  width: 80px;
+  background: #d6b5ff;
   text-align: center;
-  font-size: 24px;
-  transform: rotate(10deg);
+  transform: rotate(33deg);
+  padding: 6px;
+  border-radius: 0;
 }
 
-/* ---------- Outer orbit - This is the circles furthest away from the central point ---------- */
 .outer-orbit {
   position: absolute;
   top: 0;
@@ -238,44 +264,28 @@ body {
   width: 294px;
   height: 294px;
   border-radius: 100%;
-  border: 7px solid rgba(255, 0, 0, 0.086);
+  border: 10px solid #ff79da;
   -webkit-animation: spin-right 7s linear infinite;
   animation: spin-right 7s linear infinite;
 }
 
-/* ---------- Repeating styles for the outer orbiting circles ---------- */
 .outer-orbit-circles {
+  padding: 0px;
   position: absolute;
-  top: -13px;
+  top: -17px;
   left: 125px;
-  height: 24px;
-  width: 55px;
-  background: white;
+  width: 80px;
+  background: #d6b5ff;
   text-align: center;
-  font-size: 24px;
-  transform: rotate(5deg);
+  transform: rotate(15deg);
+  border-radius: 0;
 }
 
-/* ---------- Animation ---------- */
-@-webkit-keyframes spin-right {
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spin-left {
-  100% {
-    -webkit-transform: rotate(-360deg);
-    -moz-transform: rotate(-360deg);
-    -ms-transform: rotate(-360deg);
-    -o-transform: rotate(-360deg);
-    transform: rotate(-360deg);
-  }
-}
 /*############################## HOME PAGE ###################################*/
+.body {
+  animation: hide-scroll 2s backwards;
+}
+
 .header__location {
   background: #eaeaea;
   width: 100%;
@@ -328,7 +338,7 @@ body {
   margin: 30px auto 53px;
   background: linear-gradient(169deg, #ff79da 20%, #9356dc 100%);
   font: 600 16px "Roboto", sans-serif;
-  color: white;
+  color: #ffffff;
   transition: transform 300ms;
 }
 .btn:hover {
@@ -381,7 +391,7 @@ body {
   width: 23px;
   border-radius: 100%;
   background: #9356dc;
-  color: white;
+  color: #ffffff;
   transform: translate(-10px, 20px);
 }
 .list-item__logo {
@@ -412,7 +422,7 @@ body {
 
 .card-container {
   position: relative;
-  background: white;
+  background: #ffffff;
   width: 90%;
   margin: 0px auto 16px;
   border-radius: 20px;
@@ -471,7 +481,7 @@ body {
 .fa-heart:hover:before {
   font-family: FontAwesome;
   content: "\f004";
-  background: linear-gradient(150deg, rgb(245, 118, 219) 0%, rgb(160, 90, 220) 100%);
+  background: linear-gradient(150deg, #9356dc 0%, #ff79da 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: heart 1s;
@@ -485,7 +495,7 @@ body {
   top: 12px;
   right: 13px;
   background: #a1edda;
-  font: 300 15px "Roboto", sans-serif;
+  font: 500 15px "Roboto", sans-serif;
   text-align: center;
   padding: 6px;
 }
@@ -559,7 +569,7 @@ body {
   left: 0px;
   width: 41px;
   height: 3px;
-  background: #99e2d0;
+  background: #98e2cf;
 }
 
 .dishes {
@@ -585,17 +595,16 @@ body {
 .dish-container:hover .dish__pick {
   width: 70px;
   height: auto;
-  animation: pick 800ms ease forwards;
 }
 .dish-container:hover .dish__pick .fa-circle-check {
   transform: rotate(360deg);
-  transition: transform 800ms ease-in-out;
+  transition: transform 500ms ease-in-out;
 }
 
 .dish {
   display: flex;
   justify-content: space-between;
-  background: white;
+  background: #ffffff;
   list-style: none;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -636,15 +645,16 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #99e2d0;
+  background: #98e2cf;
   width: 0px;
   height: 100%;
   border-radius: 0 12px 12px 0;
   overflow: hidden;
+  transition: width 500ms ease-out;
 }
 
 .fa-circle-check {
-  color: white;
+  color: #ffffff;
   font-size: 30px;
 }
 
@@ -701,7 +711,7 @@ body {
 /* DESKTOP */
 @media screen and (min-width: 768px) {
   .header__title {
-    background: white;
+    background: #ffffff;
   }
   .header__img {
     height: 100vh;
@@ -724,7 +734,7 @@ body {
     justify-content: space-evenly;
     margin: 26px auto;
     padding: 30px 0;
-    background: white;
+    background: #ffffff;
     width: 100%;
   }
   .menu {
@@ -734,7 +744,7 @@ body {
   }
   .menu-part__title {
     font-weight: 500;
-    color: white;
+    color: #ffffff;
   }
   .order__btn {
     display: block;

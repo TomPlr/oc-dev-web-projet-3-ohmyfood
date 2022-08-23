@@ -1,19 +1,23 @@
-body {
-  margin: 0;
-}
-
 .loading-container {
   height: 100vh;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-content: center;
+  width: 100%;
+  z-index: 10;
+  opacity: 1;
+  background: $color-background-loading;
+  overflow-y: hidden;
+  animation: loading-spinner 2s forwards;
 }
 
 .orbit-text {
+  font-family: $font-headings;
+  font-size: 23px;
   border-radius: 50%;
 }
 
-/* ---------- Container for the orbiting circles animation ---------- */
 .circle-orbit-container {
   position: relative;
   height: 300px;
@@ -21,7 +25,6 @@ body {
   margin: auto;
 }
 
-/* ---------- Inner orbit - This is the circles closest to the central point ---------- */
 .inner-orbit {
   position: absolute;
   top: 75px;
@@ -29,25 +32,23 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 100%;
-  border: 7px solid rgba(0, 0, 255, 0.142);
-  -webkit-animation: spin-right 8s linear infinite;
-  animation: spin-right 8s linear infinite;
+  border: 10px solid $color-primary;
+  -webkit-animation: spin-right 3s linear infinite;
+  animation: spin-right 3s linear infinite;
 }
 
-/* ---------- Repeating styles for the inner orbiting circles ---------- */
 .inner-orbit-circles {
   position: absolute;
   top: -8px;
   left: 51px;
-  height: 40px;
-  width: 80px;
-  background: white;
+  width: 100px;
+  background: $color-background-loading;
   text-align: center;
-  font-size: 24px;
-  transform: rotate(15deg);
+  transform: rotate(44deg);
+  padding: 13px;
+  border-radius: 0;
 }
 
-/* ---------- Middle orbit - This is the circles second closest to the central point ---------- */
 .middle-orbit {
   position: absolute;
   top: 35px;
@@ -55,25 +56,23 @@ body {
   width: 225px;
   height: 225px;
   border-radius: 100%;
-  border: 7px solid rgba(0, 128, 0, 0.167);
-  -webkit-animation: spin-left 6s linear infinite;
-  animation: spin-left 6s linear infinite;
+  border: 10px solid $color-tertiary;
+  -webkit-animation: spin-left 5s linear infinite;
+  animation: spin-left 5s linear infinite;
 }
 
-/* ---------- Repeating styles for the inner orbiting circles ---------- */
 .middle-orbit-circles {
   position: absolute;
-  top: -7px;
+  top: -13px;
   left: 113px;
-  height: 21px;
-  width: 55px;
-  background: white;
+  width: 80px;
+  background: $color-background-loading;
   text-align: center;
-  font-size: 24px;
-  transform: rotate(10deg);
+  transform: rotate(33deg);
+  padding: 6px;
+  border-radius: 0;
 }
 
-/* ---------- Outer orbit - This is the circles furthest away from the central point ---------- */
 .outer-orbit {
   position: absolute;
   top: 0;
@@ -81,41 +80,19 @@ body {
   width: 294px;
   height: 294px;
   border-radius: 100%;
-  border: 7px solid rgba(255, 0, 0, 0.086);
+  border: 10px solid $color-secondary;
   -webkit-animation: spin-right 7s linear infinite;
   animation: spin-right 7s linear infinite;
 }
 
-/* ---------- Repeating styles for the outer orbiting circles ---------- */
 .outer-orbit-circles {
+  padding: 0px;
   position: absolute;
-  top: -13px;
+  top: -17px;
   left: 125px;
-  height: 24px;
-  width: 55px;
-  background: white;
+  width: 80px;
+  background: $color-background-loading;
   text-align: center;
-  font-size: 24px;
-  transform: rotate(5deg);
-}
-
-/* ---------- Animation ---------- */
-@-webkit-keyframes spin-right {
-  100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes spin-left {
-  100% {
-    -webkit-transform: rotate(-360deg);
-    -moz-transform: rotate(-360deg);
-    -ms-transform: rotate(-360deg);
-    -o-transform: rotate(-360deg);
-    transform: rotate(-360deg);
-  }
+  transform: rotate(15deg);
+  border-radius: 0;
 }

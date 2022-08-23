@@ -1,4 +1,8 @@
 /*############################## HOME PAGE ###################################*/
+.body {
+  animation: hide-scroll 2s backwards;
+}
+
 //######## HEADER ######
 
 .header {
@@ -135,7 +139,7 @@
 //######## RESTAURANTS ######
 
 .restaurants {
-  background: #f3f3f3;
+  background: $color-light-4;
   padding-bottom: 46px;
 
   &__title {
@@ -219,11 +223,7 @@
 .fa-heart:hover:before {
   font-family: FontAwesome;
   content: '\f004';
-  background: linear-gradient(
-    150deg,
-    rgba(245, 118, 219, 1) 0%,
-    rgba(160, 90, 220, 1) 100%
-  );
+  background: linear-gradient(150deg, $color-primary 0%, $color-secondary 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: heart 1s;
@@ -237,7 +237,7 @@
   top: 12px;
   right: 13px;
   background: #a1edda;
-  font: 300 15px $font-text;
+  font: 500 15px $font-text;
   text-align: center;
   padding: 6px;
 }
